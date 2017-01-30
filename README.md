@@ -1,4 +1,4 @@
-# angular-template-loader
+# angular-template-url-loader
 AngularJS webpack loader that inlines your templates into angular directives and components.
 
 ### Quick Links
@@ -9,7 +9,7 @@ AngularJS webpack loader that inlines your templates into angular directives and
 
 ### Installation
 ```bash
-npm install angular-template-loader --save-dev
+npm install angular-template-url-loader --save-dev
 ```
 
 ### Usage
@@ -20,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: [ 'angular-template-loader' ]
+        use: [ 'angular-template-url-loader' ]
       },
       {
         test: /\.html$/, 
