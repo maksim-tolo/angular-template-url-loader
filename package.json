@@ -1,0 +1,27 @@
+{
+  "name": "angular-template-loader",
+  "version": "1.0.0",
+  "description": "AngularJS webpack loader that inlines your templates into angular directives and components.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:maksim-tolo/angular-template-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "angular",
+    "angularjs",
+    "loader",
+    "angular-loader"
+  ],
+  "author": "Maxim Tolochko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maksim-tolo/angular-template-loader/issues"
+  },
+  "homepage": "https://github.com/maksim-tolo/angular-template-loader#readme",
+  "dependencies": {
+    "loader-utils": "^0.2.16"
+  }
+}
