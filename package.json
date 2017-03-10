@@ -1,6 +1,6 @@
 {
   "name": "angular-template-url-loader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "AngularJS webpack loader that inlines your templates into angular directives and components.",
   "main": "index.js",
   "scripts": {},

@@ -4,13 +4,14 @@ var path = require('path');
 var templateUrlRegex = /templateUrl\s*:\s*['"`](.*?)['"`]\s*([,}\n])/gm;
 
 module.exports = function(source) {
-  var basePath = loaderUtils.parseQuery(this.query).basePath || '';
+  var context = this;
+  var basePath = loaderUtils.parseQuery(context.query).basePath || '';
 
-  if (this.cacheable) {
-    this.cacheable();
+  if (context.cacheable) {
+    context.cacheable();
   }
 
   return source.replace(templateUrlRegex, function(match, url, ending) {
-    return 'template: require(' + loaderUtils.stringifyRequest(this, path.posix.join(basePath, url)) + ')' + ending;
+    return 'template: require(' + loaderUtils.stringifyRequest(context, path.join(basePath, url)) + ')' + ending;
   });
 };
