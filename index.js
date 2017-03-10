@@ -11,6 +11,6 @@ module.exports = function(source) {
   }
 
   return source.replace(templateUrlRegex, function(match, url, ending) {
-    return 'template: require("' + path.posix.join(basePath, url) + '")' + ending;
+    return 'template: require(' + loaderUtils.stringifyRequest(this, path.posix.join(basePath, url)) + ')' + ending;
   });
 };
