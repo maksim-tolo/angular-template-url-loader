@@ -1,25 +1,22 @@
-var { getOptions, stringifyRequest } = require('loader-utils');
-var path = require('path');
+const { getOptions, stringifyRequest } = require('loader-utils');
+const path = require('path');
 
-var templateUrlRegex = /templateUrl\s*:\s*['"`](.*?)['"`]\s*([,}\n])/gm;
-
+const templateUrlRegex = /templateUrl\s*:\s*['"`](.*?)['"`]\s*([,}\n])/gm;
 const DEFAULTS = {
   basePath: ''
 };
 
 module.exports = function(source) {
-  var context = this;
   const options = Object.assign(
     {},
     DEFAULTS,
-    getOptions(context),
+    getOptions(this),
   );
 
-  if (context.cacheable) {
-    context.cacheable();
+  if (this.cacheable) {
+    this.cacheable();
   }
 
-  return source.replace(templateUrlRegex, function(match, url, ending) {
-    return 'template: require(' + stringifyRequest(context, path.join(options.basePath, url)) + ')' + ending;
-  });
+  return source.replace(templateUrlRegex, (match, url, ending) =>
+    `template: require(${stringifyRequest(this, path.join(options.basePath, url))})${ending}`);
 };
