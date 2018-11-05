@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/maksim-tolo/angular-template-url-loader#readme",
   "dependencies": {
-    "loader-utils": "^0.2.16"
+    "loader-utils": "^1.1.0"
   }
 }
